@@ -2,7 +2,7 @@
 # Author: Elina Vigand
 # Disclaimer: Online resources and ChatGPT were used during this project.
 
-word = "troubleshoot"
+word = str(input("Player 1, choose a word: ")).lower()
 wrong_guesses = 8
 guesses = 0
 guessed_letters = set()
@@ -10,7 +10,7 @@ display_word = ["_" for _ in word]
 
 while guesses < wrong_guesses:
     print("Word: ", display_word)
-    user_guess = input("Guess a letter: ").lower()
+    user_guess = input("Player 2, guess a letter: ").lower()
     
     guessed_letters.add(user_guess)
 
