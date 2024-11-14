@@ -2,6 +2,91 @@
 # Author: Elina Vigand
 # Disclaimer: Online resources and ChatGPT were used during this project.
 
+hangman_stages = [
+    """
+    """,
+    """
+      _______
+     |/      
+     | 
+     |       
+     |       
+     |       
+     |
+    _|___
+    """,
+    """
+      _______
+     |/      
+     |      (_)
+     |       
+     |       
+     |       
+     |
+    _|___
+    """,
+    """
+      _______
+     |/      
+     |      (_)
+     |       |
+     |       |
+     |       
+     |
+    _|___
+    """,
+    """
+      _______
+     |/      
+     |      (_)
+     |      \|
+     |       |
+     |       
+     |
+    _|___
+    """,
+    """
+      _______
+     |/      
+     |      (_)
+     |      \|/
+     |       |
+     |       
+     |
+    _|___
+    """,
+    """
+      _______
+     |/      
+     |      (_)
+     |      \|/
+     |       |
+     |      / 
+     |
+    _|___
+    """,
+    """
+      _______
+     |/      
+     |      (_)
+     |      \|/
+     |       |
+     |      / \\
+     |
+    _|___
+    """,
+    """
+      _______
+     |/      |
+     |      (_)
+     |      \|/
+     |       |
+     |      / \\
+     |
+    _|___
+    """
+    ]
+ 
 word = str(input("Player 1, choose a word: ")).lower()
 wrong_guesses = 8
 guesses = 0
@@ -9,6 +94,7 @@ guessed_letters = set()
 display_word = ["_" for _ in word]
 
 while guesses < wrong_guesses:
+    print(hangman_stages[guesses])
     print("Word: ", display_word)
     user_guess = input("Player 2, guess a letter: ").lower()
     
@@ -32,5 +118,6 @@ while guesses < wrong_guesses:
 
     # Check if the player has reached maximum guesses  
     if guesses == wrong_guesses:
+        print(hangman_stages[guesses])
         print(f"You have lost the game! The word was: {word}")
 
